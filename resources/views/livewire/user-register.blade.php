@@ -1,6 +1,6 @@
 <div class="container">
     <div class="login_wrapper">
-        <form action="" method="get">
+        <form action="{{ route('santa.dashboard') }}">
             <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
             <div class="form-heading">Get Ready</div>
             <div class="form-subheading">Get your key to enter the santa world</div>

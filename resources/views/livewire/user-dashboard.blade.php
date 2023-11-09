@@ -1,66 +1,152 @@
 <div class="container-dashboard">
 
     <div class="santas-wrapper">
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
-        <div class="santa-card">
-            <div class="card-number">
-                <span>Select Me</span>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
             </div>
-            <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
-        </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+        <a wire:navigate href="{{ route('santa.end') }}">
+            <div class="santa-card">
+                <div class="card-number">
+                    <span>Select Me</span>
+                </div>
+                <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
+            </div>
+        </a>
+
     </div>
 
     <style>

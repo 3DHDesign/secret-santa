@@ -1,5 +1,4 @@
 <div class="container">
-
     <div class="login_wrapper">
         <form action="" method="get">
             <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">

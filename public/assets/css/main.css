@@ -276,6 +276,12 @@ input[type="password"]:focus {
     transform: scale(1.1);
 }
 
+.santa-gift {
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 
 @media screen and (max-width: 800px) {
     .container .login_wrapper {
