@@ -1,8 +1,10 @@
 @extends('layouts.master')
 @section('content')
     <div class="container">
+
         <div class="login_wrapper">
             <form action="" method="get">
+                <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
                 <div class="form-heading">Entrance</div>
                 <div class="form-subheading">Free entrance to secret santa</div>
                 <div class="form-element">
