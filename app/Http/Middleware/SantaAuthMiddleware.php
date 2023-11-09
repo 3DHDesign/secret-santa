@@ -16,8 +16,8 @@ class SantaAuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!Auth::check()) {
-            return redirect()->route('santa.login'); // Redirect to login if not authenticated
+        if (!Auth::guard('players')->check()) {
+            return redirect()->route('santa.login');
         }
 
         return $next($request);
