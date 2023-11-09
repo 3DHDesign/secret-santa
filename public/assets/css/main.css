@@ -223,6 +223,60 @@ input[type="password"]:focus {
     z-index: -2;
 }
 
+.container-dashboard {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.santas-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: fit-content;
+}
+
+.santa-card {
+    width: 180px;
+    height: 25vh;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 10px;
+    cursor: pointer;
+}
+
+.santa-card .santa-image {
+    width: 60%;
+}
+
+.santa-card .card-number {
+    color: #970148;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.santa-card:hover {
+    outline: 5px solid #00611d;
+    transition: .1s ease-in-out;
+    transform: scale(1.1);
+}
+
+
 @media screen and (max-width: 800px) {
     .container .login_wrapper {
         width: 80%;
