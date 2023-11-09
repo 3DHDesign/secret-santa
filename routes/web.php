@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\FrontEndController;
+use App\Livewire\UserDashboard;
+use App\Livewire\UserLogin;
+use App\Livewire\UserRegister;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontEndController::class, 'santaLogin'])->name('santa.login');
+Route::get('/', UserLogin::class)->name('santa.login');
+Route::get('/get-key', UserRegister::class)->name('santa.register');
+Route::get('/start-game', UserDashboard::class)->name('santa.dashboard');

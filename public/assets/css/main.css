@@ -28,17 +28,36 @@ body {
     font-family: "Unbounded", sans-serif;
 }
 
+.preloader-on {
+    display: flex !important;
+}
+
 .preloader {
     position: absolute;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.564);
+    background-color: rgba(0, 0, 0, 0.801);
     align-items: center;
     justify-content: center;
     z-index: 1000;
     display: none;
+}
+
+.preloader img {
+    width: 8%;
+    margin-bottom: 10px;
+    -webkit-animation-name: loading-animation;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear, ease-in-out;
+    -webkit-animation-iteration-count: infinite, infinite;
+    -webkit-animation-play-state: running, running;
+    animation-name: loading-animation;
+    animation-duration: 1.5s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running;
 }
 
 .container {
@@ -119,6 +138,18 @@ input[type="password"]:focus {
     outline: 3px solid green;
 }
 
+.form-bottom-link {
+    color: #000;
+}
+
+.form-bottom-link i {
+    color: #d98d00;
+}
+
+.form-bottom-link a {
+    color: blue;
+}
+
 .submit-btn {
     width: 100%;
     display: flex;
@@ -160,6 +191,7 @@ input[type="password"]:focus {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: -3;
 }
 
 .floating-santa {
@@ -168,6 +200,7 @@ input[type="password"]:focus {
     top: 0;
     right: 0;
     z-index: -1;
+    transition: .5s ease-in-out;
     -webkit-animation-name: santa-floating;
     -webkit-animation-duration: 10s, 3s;
     -webkit-animation-timing-function: linear, ease-in-out;
@@ -180,6 +213,8 @@ input[type="password"]:focus {
     animation-play-state: running, running;
 }
 
+
+
 .moon {
     width: 30%;
     position: absolute;
@@ -190,6 +225,23 @@ input[type="password"]:focus {
 
 @media screen and (max-width: 800px) {
     .container .login_wrapper {
+        width: 80%;
+    }
+
+    .floating-santa,
+    .moon {
+        width: 70%;
+    }
+
+    .floating-santa {
+        transform: translateX(120px) !important;
+    }
+
+    .moon {
+        transform: translateX(100px);
+    }
+
+    .dh-office {
         width: 80%;
     }
 }
@@ -221,6 +273,7 @@ input[type="password"]:focus {
     }
 }
 
+
 @keyframes snowflakes-fall {
     0% {
         top: -10%;
@@ -242,6 +295,20 @@ input[type="password"]:focus {
 
     100% {
         transform: translateX(0px);
+    }
+}
+
+@keyframes loading-animation {
+    0% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(20deg);
     }
 }
 

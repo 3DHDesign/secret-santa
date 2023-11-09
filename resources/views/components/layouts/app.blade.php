@@ -47,13 +47,22 @@
         ❄
     </div>
 
-    @yield('content')
+    {{ $slot }}
+
 
     <img class="floating-santa" src="{{ asset('assets/images/santa-with-baloon.png') }}" alt="Santa floating">
     <img class="moon" src="{{ asset('assets/images/moon.png') }}" alt="Moon">
     <img class="dh-office" src="{{ asset('assets/images/3dh-house.png') }}" alt="3dh-office">
 
     @livewireScripts
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(window).load(function() {
+            $('.preloader').fadeOut('slow');
+        });
+    </script>
+
 </body>
 
 </html>

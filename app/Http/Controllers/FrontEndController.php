@@ -6,8 +6,4 @@ use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
 {
-    public function santaLogin()
-    {
-        return view('pages.santaLogin');
-    }
 }
