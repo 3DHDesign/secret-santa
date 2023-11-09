@@ -6,15 +6,24 @@
             <div class="form-subheading">Get your key to enter the santa world</div>
             <div class="form-element">
                 <label for="fullname">Full Name</label>
-                <input type="text" name="fullname" placeholder="Full Name">
+                <input type="text" wire:model.live="fullname" placeholder="Full Name">
+                @error('fullname')
+                    <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
+                @enderror
             </div>
             <div class="form-element">
                 <label for="number">Mobile Number</label>
-                <input type="text" name="number" placeholder="Mobile number">
+                <input type="text" wire:model.live="number" placeholder="Mobile number">
+                @error('number')
+                    <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
+                @enderror
             </div>
             <div class="form-element">
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" wire:model.live="password" placeholder="Password">
+                @error('password')
+                    <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
+                @enderror
             </div>
             <button class="submit-btn"><i class="fa-solid fa-ticket"></i>Grab your key</button>
             <p class="form-bottom-link">I Already have a pass > <a wire:navigate
