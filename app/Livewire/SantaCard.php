@@ -29,7 +29,11 @@ class SantaCard extends Component
                 'guest_user' => $this->id,
             ]);
 
+            $playerId = $this->id;
+
+            event(new \App\Events\SantaPlaygroundEvent($playerId));
             if ($assign->save()) {
+                $this->emit('SantaPlaygroundEvent', $this->id);
                 return $this->redirect('game-end', navigate: true);
             } else {
                 return $this->redirect('start-game', navigate: true);

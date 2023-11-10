@@ -31,4 +31,12 @@
             display: none
         }
     </style>
+    <script>
+        document.addEventListener('livewire:load', function() {
+            window.Echo.channel('santa-playground-channel')
+                .listen('SantaPlaygroundEvent', (event) => {
+                    Livewire.emit('santaCardSelected', event.playerId);
+                });
+        });
+    </script>
 </div>

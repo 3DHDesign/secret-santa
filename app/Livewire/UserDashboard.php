@@ -13,6 +13,8 @@ class UserDashboard extends Component
     public $players;
     public $user;
 
+    protected $listeners = ['santaCardSelected' => 'updateSelectedCards'];
+
     function __construct()
     {
         $this->user = Auth::guard('players')->user();
@@ -46,6 +48,16 @@ class UserDashboard extends Component
             }
         }
         $this->players = $activePlayers;
+    }
+
+    public function updateSelectedCards($playerId)
+    {
+        dd('hiii');
+        $this->players = array_filter($this->players, function ($player) use ($playerId) {
+            return $player->id != $playerId;
+        });
+
+        $this->render();
     }
 
     public function render()
