@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware(['santa.auth'])->group(function () {
-    Route::get('/start-game', UserDashboard::class)->name('santa.dashboard');
+    Route::get('/start-game', UserDashboard::class)->middleware('santa.check')->name('santa.dashboard');
     Route::get('/game-end', ShowSelectedPerson::class)->name('santa.end');
 });
 

@@ -13,8 +13,9 @@
         }
     </style>
     <div class="login_wrapper">
-        <div class="form-heading">Tharuka Idushan</div>
-        <div class="form-subheading">Your selected <strong>Tharuka Idushan</strong>... <br> Division: 3DH Design</div>
+        <div class="form-heading">{{ $player_details->full_name }}</div>
+        <div class="form-subheading">Your selected <strong>{{ $player_details->full_name }}</strong>... <br> Division:
+            {{ $player_details->division->name }}</div>
         <img class="santa-gift" src="{{ asset('assets/images/secret-gift.png') }}" alt="Secret Gift from santa">
         <p class="form-bottom-link" style="color: red">We Wish You a Merry Christmas</i>
     </div>

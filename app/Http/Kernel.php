@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'santa.auth' => \App\Http\Middleware\SantaAuthMiddleware::class,
         'santa.login.auth' => \App\Http\Middleware\SantaLoginAuthMiddleware::class,
+        'santa.check' => \App\Http\Middleware\SantaCheckMiddleware::class,
     ];
 }

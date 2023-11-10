@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class SantaAuthMiddleware
+class SantaCheckMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,16 +17,12 @@ class SantaAuthMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $user = Auth::guard('players')->user();
+        $isPlayerActive = GamePool::where('player_id', $user->id)->exists();
 
-        if (!Auth::guard('players')->check()) {
-            return redirect()->route('santa.login');
+        if ($isPlayerActive) {
+            return redirect()->route('santa.end');
         }
-
-
-
-
-
-
         return $next($request);
     }
 }

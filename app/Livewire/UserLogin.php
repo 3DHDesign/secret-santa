@@ -24,7 +24,7 @@ class UserLogin extends Component
         ];
 
         if (Auth::guard('players')->attempt($credentials)) {
-            return redirect()->route('santa.dashboard');
+            return $this->redirect('/start-game', navigate: true);
         } else {
             $this->addError('number', 'Invalid credentials. Please check your number and password.');
         }
