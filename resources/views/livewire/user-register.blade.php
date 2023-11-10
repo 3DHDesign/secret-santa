@@ -4,7 +4,7 @@
         <p>Loading ...</p>
     </div>
     <div class="login_wrapper">
-        <form action="{{ route('santa.dashboard') }}">
+        <form wire:submit.prevent="register">
             <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
             <div class="form-heading">Get Ready</div>
             <div class="form-subheading">Get your key to enter the santa world</div>
@@ -12,6 +12,18 @@
                 <label for="fullname">Full Name</label>
                 <input type="text" wire:model.live="fullname" placeholder="Full Name">
                 @error('fullname')
+                    <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
+                @enderror
+            </div>
+            <div class="form-element">
+                <label for="division">Select Division</label>
+                <select wire:model.live="selectedDivision" id="division">
+                    <option value="">Select Your Division</option>
+                    @foreach ($divisions as $division)
+                        <option value="{{ $division->id }}">{{ $division->name }}</option>
+                    @endforeach
+                </select>
+                @error('division')
                     <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
                 @enderror
             </div>

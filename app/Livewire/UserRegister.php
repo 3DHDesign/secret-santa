@@ -2,8 +2,10 @@
 
 namespace App\Livewire;
 
+use App\Models\Division;
 use App\Models\Player;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -18,14 +20,21 @@ class UserRegister extends Component
     #[Rule('required|max:20|min:4|string')]
     public $password = '';
 
+    #[Rule('required')]
+    public $selectedDivision = '';
+
+
+    public $divisions;
+
     function register()
     {
         $this->validate();
 
         $player = Player::create([
+            'division_id' => $this->selectedDivision,
             'full_name' => $this->fullname,
             'number' => $this->number,
-            'password' => $this->password,
+            'password' => Hash::make($this->password),
         ]);
 
         if ($player->save()) {
@@ -33,6 +42,11 @@ class UserRegister extends Component
         } else {
             $this->addError('fullname', 'Something went wrong.. try again..');
         }
+    }
+
+    function mount()
+    {
+        $this->divisions = Division::select(['id', 'name'])->get();
     }
 
     public function render()

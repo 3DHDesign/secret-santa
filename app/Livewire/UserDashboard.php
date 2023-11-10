@@ -36,15 +36,13 @@ class UserDashboard extends Component
             $isPlayerActive = GamePool::where('guest_user', $playerId->id)->exists();
 
             if (!$isPlayerActive) {
-
                 $player = Player::where('id', $playerId->id)->select(['id'])->get();
-
                 if ($player) {
-
                     $activePlayers[] = $player;
                 }
             }
         }
+
         $this->players = $activePlayers;
     }
 

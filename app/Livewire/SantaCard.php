@@ -24,12 +24,13 @@ class SantaCard extends Component
 
         if ($player_details) {
 
-            $assign = GamePool::create([
-                'player_id' => $this->user->id,
-                'guest_user' => $this->id,
-            ]);
+            $isActive = GamePool::where('guest_user', $this->id)->exists();
 
-            if ($assign->save()) {
+            if (!$isActive) {
+                GamePool::create([
+                    'player_id' => $this->user->id,
+                    'guest_user' => $this->id,
+                ]);
                 return $this->redirect('game-end', navigate: true);
             } else {
                 return $this->redirect('start-game', navigate: true);

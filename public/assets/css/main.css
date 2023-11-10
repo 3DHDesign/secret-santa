@@ -143,12 +143,17 @@ form {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+select {
     border: none;
     padding: 10px 20px;
     background-color: rgb(243, 243, 243);
     font-size: 18px;
     border-radius: 8px;
+}
+
+select {
+    width: 100%;
 }
 
 input[type="text"]:focus,
