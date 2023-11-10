@@ -12,10 +12,7 @@
 </head>
 
 <body>
-    <div class="preloader">
-        <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
-        <p>Loading ...</p>
-    </div>
+
     <div class="snowflake">
         ❅
     </div>
@@ -49,10 +46,11 @@
 
     @yield('content')
 
+
+
     <img class="floating-santa" src="{{ asset('assets/images/santa-with-baloon.png') }}" alt="Santa floating">
     <img class="moon" src="{{ asset('assets/images/moon.png') }}" alt="Moon">
     <img class="dh-office" src="{{ asset('assets/images/3dh-house.png') }}" alt="3dh-office">
-
     @livewireScripts
 </body>
 

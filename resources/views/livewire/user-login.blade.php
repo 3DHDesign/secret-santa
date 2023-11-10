@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="preloader" wire:loading.flex wire:target="login">
+        <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
+        <p>Loading ...</p>
+    </div>
     <div class="login_wrapper">
         <form wire:submit.prevent="login">
             <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">

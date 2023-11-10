@@ -182,6 +182,30 @@ input[type="password"]:focus {
     transition: 0.1s ease-in-out;
 }
 
+.logout-button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    color: #fff;
+    background-color: #970148;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    -webkit-box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    -moz-box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    z-index: 2000;
+}
+
+.logout-button i {
+    font-size: 20px;
+}
+
 .submit-btn .fa-ticket {
     rotate: -45deg;
 }

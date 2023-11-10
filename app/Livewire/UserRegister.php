@@ -23,14 +23,16 @@ class UserRegister extends Component
         $this->validate();
 
         $player = Player::create([
-            'fullname' => $this->fullname,
+            'full_name' => $this->fullname,
             'number' => $this->number,
             'password' => $this->password,
         ]);
 
-        Auth::login($player);
-
-        $player->save();
+        if ($player->save()) {
+            return redirect()->route('santa.login');
+        } else {
+            //
+        }
     }
 
     public function render()
