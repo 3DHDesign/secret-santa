@@ -9,12 +9,16 @@
     </div>
     <div class="santas-wrapper">
 
-        @foreach ($players as $collection)
-            @foreach ($collection as $player)
-                <div class="player-info">
-                    <livewire:santa-card :id="$player->id" />
+        @foreach ($players as $player)
+            <div class="player-info">
+                <div class="santa-card" wire:click="selected({{ $player }})">
+                    <div class="card-number">
+                        <span>Select Me</span>
+                    </div>
+                    <img class="santa-image" src="{{ asset('assets/images/card/card-avatar.png') }}" alt="Santa Avatar">
                 </div>
-            @endforeach
+
+            </div>
         @endforeach
 
     </div>
@@ -31,4 +35,6 @@
             display: none
         }
     </style>
+
+
 </div>
