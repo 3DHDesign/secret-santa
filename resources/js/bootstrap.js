@@ -26,9 +26,6 @@ window.Pusher = Pusher;
 window.Echo = new Echo({
     broadcaster: "pusher",
     key: import.meta.env.VITE_PUSHER_APP_KEY,
-    wsHost: import.meta.env.PUSHER_HOST,
-    wsPort: 6001,
-    forceTLS: false,
-    enabledTransports: ["ws", "wss"],
-    cluster: "mt1",
+    cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
+    forceTLS: true,
 });

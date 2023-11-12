@@ -24,7 +24,7 @@ class UserDashboard extends Component
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         Auth::guard('players')->logout();
-        return $this->redirect('/', navigate: true);
+        $this->redirect('/');
     }
 
     function mount()
@@ -65,10 +65,10 @@ class UserDashboard extends Component
                 event(new \App\Events\GamePoolEvent($id));
                 $this->redirect('game-end');
             } else {
-                return $this->redirect('start-game', navigate: true);
+                $this->redirect('start-game');
             }
         } else {
-            return $this->redirect('start-game', navigate: true);
+            $this->redirect('start-game');
         }
     }
 

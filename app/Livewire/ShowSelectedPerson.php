@@ -32,7 +32,7 @@ class ShowSelectedPerson extends Component
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         Auth::guard('players')->logout();
-        return $this->redirect('/', navigate: true);
+        $this->redirect('/');
     }
 
     public function render()

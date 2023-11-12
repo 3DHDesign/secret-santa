@@ -7,3 +7,10 @@ window.Alpine = Alpine;
 Alpine.plugin(focus);
 
 Alpine.start();
+
+const channel = Echo.channel("player.remove");
+
+console.log("hi");
+channel.subscribed(() => {
+    console.log("Subs");
+});
