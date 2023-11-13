@@ -8,6 +8,7 @@ use App\Livewire\UserDashboard;
 use App\Livewire\UserLogin;
 use App\Livewire\UserRegister;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,14 @@ Route::middleware(['santa.auth'])->group(function () {
 Route::middleware(['santa.login.auth'])->group(function () {
     Route::get('/', UserLogin::class)->name('santa.login');
     Route::get('/get-key', UserRegister::class)->name('santa.register');
+});
+
+Route::get('/cls', function () {
+    Artisan::call('optimize:clear');
+});
+
+Route::get('/ws', function () {
+    Artisan::call('websockets:serve');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])
