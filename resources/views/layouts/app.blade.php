@@ -21,6 +21,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+
     <!-- Styles -->
     @livewireStyles
 </head>
@@ -49,6 +51,7 @@
     @stack('modals')
 
     @livewireScripts
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 </body>
 
 </html>
