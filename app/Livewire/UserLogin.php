@@ -9,7 +9,7 @@ use Livewire\Component;
 class UserLogin extends Component
 {
     #[Rule(
-        'required|regex:/^\+\d{11}$/|unique:players|string',
+        'required|regex:/^\+\d{11}$/|string',
         message: [
             'regex' => 'Please enter a valid phone number in the format: +947XXXXXXXX.',
             'required' => 'Please add your mobile number',
