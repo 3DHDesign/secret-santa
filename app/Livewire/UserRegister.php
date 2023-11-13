@@ -11,7 +11,7 @@ use Livewire\Component;
 
 class UserRegister extends Component
 {
-    #[Rule('required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10|unique:players|string')]
+    #[Rule('required|regex:/^\+\d{11}$/|unique:players|string',  message: 'Please enter a valid phone number in the format +947XXXXXXXX.')]
     public $number = '';
 
     #[Rule('required|max:30|min:4|string')]

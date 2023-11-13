@@ -84,6 +84,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 18px;
+    margin: 54px 0 40px 0;
 }
 
 .error-wrapper {
@@ -302,7 +303,7 @@ input[type="password"]:focus {
 
 .santa-card {
     width: 180px;
-    height: 25vh;
+    height: fit-content;
     background-color: #fff;
     border-radius: 10px;
     display: flex;
@@ -346,14 +347,6 @@ input[type="password"]:focus {
     .floating-santa,
     .moon {
         width: 70%;
-    }
-
-    .floating-santa {
-        transform: translateX(120px) !important;
-    }
-
-    .moon {
-        transform: translateX(100px);
     }
 
     .dh-office {
