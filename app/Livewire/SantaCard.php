@@ -10,8 +10,10 @@ use Livewire\Component;
 
 class SantaCard extends Component
 {
-    #[Reactive] 
+
     public $id;
+
+    public $class;
 
     public $user;
 
@@ -20,29 +22,52 @@ class SantaCard extends Component
         $this->user = Auth::guard('players')->user();
     }
 
-    function selected()
+
+    public function mount()
     {
-        $player_details = Player::find($this->id)->exists();
+        $isPlayerActive = GamePool::where('guest_user', $this->id)->exists();
 
-        if ($player_details) {
-
-            $isActive = GamePool::where('guest_user', $this->id)->exists();
-
-            if (!$isActive) {
-                // GamePool::create([
-                //     'player_id' => $this->user->id,
-                //     'guest_user' => $this->id,
-                // ]);
-                // return $this->redirect('game-end', navigate: true);
-                event(new \App\Events\GamePoolEvent($this->id));
-                // $this->dispatch('post-created', title: $this->id);
-            } else {
-                return $this->redirect('start-game', navigate: true);
-            }
+        if ($isPlayerActive) {
+            $this->class = 'off-class';
         } else {
-            return $this->redirect('start-game', navigate: true);
+            $this->class = 'show-class';
         }
     }
+
+    function selected($id)
+    {
+        $player_details = Player::find($id)->exists();
+        $isPlayerActive = GamePool::where('guest_user', $id)->exists();
+
+        if ($player_details && !$isPlayerActive) {
+
+            $isActive = GamePool::where('guest_user', $id)->exists();
+
+            if (!$isActive) {
+                GamePool::create([
+                    'player_id' => $this->user->id,
+                    'guest_user' => $id,
+                ]);
+                event(new \App\Events\GamePoolEvent($id));
+                $this->redirect('game-end');
+            } else {
+                $this->redirect('start-game');
+            }
+        }
+    }
+
+    public function getListeners()
+    {
+        return [
+            'echo:player.remove,.remove' => 'removePlayer',
+        ];
+    }
+
+    public function removePlayer($playerId)
+    {
+        $this->mount();
+    }
+
 
     public function render()
     {
