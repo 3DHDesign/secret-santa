@@ -105,6 +105,7 @@ body {
     color: black;
     font-weight: 700;
     margin: 0;
+    text-align: center;
 }
 
 .form-subheading {
@@ -171,6 +172,7 @@ input[type="password"]:focus {
 
 .form-bottom-link {
     color: #000;
+    text-align: center;
 }
 
 .form-bottom-link i {
@@ -299,7 +301,7 @@ input[type="password"]:focus {
 }
 
 .santa-card {
-    width: 180px;
+    width: 10%;
     height: fit-content;
     background-color: #fff;
     border-radius: 10px;
@@ -347,6 +349,10 @@ input[type="password"]:focus {
 
     .dh-office {
         width: 80%;
+    }
+
+    .santa-card {
+        width: 45%;
     }
 }
 

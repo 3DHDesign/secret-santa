@@ -18,7 +18,7 @@ class UserRegister extends Component
             'required' => 'Please add your mobile number',
         ]
     )]
-    public $number = '';
+    public $number = '+94';
 
     #[Rule('required|max:30|min:4|string')]
     public $fullname = '';
