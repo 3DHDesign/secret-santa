@@ -24,7 +24,7 @@ class UserLogin extends Component
         ];
 
         if (Auth::guard('players')->attempt($credentials)) {
-            return $this->redirect('/start-game', navigate: true);
+            $this->redirect('/start-game');
         } else {
             $this->addError('number', 'Invalid credentials. Please check your number and password.');
         }

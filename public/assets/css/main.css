@@ -16,7 +16,6 @@
     background: green;
 }
 
-
 a {
     color: inherit;
     text-decoration: none;
@@ -256,7 +255,7 @@ input[type="password"]:focus {
     top: 0;
     right: 0;
     z-index: -1;
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
     -webkit-animation-name: santa-floating;
     -webkit-animation-duration: 10s, 3s;
     -webkit-animation-timing-function: linear, ease-in-out;
@@ -268,8 +267,6 @@ input[type="password"]:focus {
     animation-iteration-count: infinite, infinite;
     animation-play-state: running, running;
 }
-
-
 
 .moon {
     width: 30%;
@@ -328,7 +325,7 @@ input[type="password"]:focus {
 
 .santa-card:hover {
     outline: 5px solid #00611d;
-    transition: .1s ease-in-out;
+    transition: 0.1s ease-in-out;
     transform: scale(1.1);
 }
 
@@ -337,7 +334,6 @@ input[type="password"]:focus {
     margin-top: 20px;
     margin-bottom: 30px;
 }
-
 
 @media screen and (max-width: 800px) {
     .container .login_wrapper {
@@ -380,7 +376,6 @@ input[type="password"]:focus {
         transform: translateX(0px);
     }
 }
-
 
 @keyframes snowflakes-fall {
     0% {
