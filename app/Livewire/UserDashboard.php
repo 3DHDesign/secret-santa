@@ -24,7 +24,7 @@ class UserDashboard extends Component
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         Auth::guard('players')->logout();
-        $this->redirect('/');
+        $this->redirect('/santa-login');
     }
 
     function mount()

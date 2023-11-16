@@ -25,8 +25,8 @@
                 @enderror
             </div>
             <button class="submit-btn"><i class="fa-solid fa-ticket"></i>Entrance Pass</button>
-            <p class="form-bottom-link">I don't have a pass > <a wire:navigate href="{{ route('santa.register') }}">Get
-                    your key
+            <p class="form-bottom-link">I forgot my password > <a wire:navigate href="{{ route('santa.reset') }}">Reset
+                    now
                 </a><i class="fa-solid fa-key"></i>
             </p>
         </form>

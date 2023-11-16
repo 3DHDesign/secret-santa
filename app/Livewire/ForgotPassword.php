@@ -103,7 +103,7 @@ class ForgotPassword extends Component
             $passwordVerify->save();
             $user->save();
 
-            $this->redirect('/login');
+            $this->redirect('/santa-login');
         } else {
             $this->addError('newPassword', 'Your way is wrong!!');
         }

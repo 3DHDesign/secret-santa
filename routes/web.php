@@ -33,7 +33,7 @@ Route::middleware(['santa.auth'])->group(function () {
 });
 
 Route::middleware(['santa.login.auth'])->group(function () {
-    Route::get('/login', UserLogin::class)->name('santa.login');
+    Route::get('/santa-login', UserLogin::class)->name('santa.login');
     Route::get('/password-reset', ForgotPassword::class)->name('santa.reset');
     Route::get('/', UserRegister::class)->name('santa.register');
 });

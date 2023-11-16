@@ -1,5 +1,13 @@
 <div class="container">
-    <div class="preloader" wire:loading.flex wire:target="login">
+    <div class="preloader" wire:loading.flex wire:target="resetPassword">
+        <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
+        <p>Loading ...</p>
+    </div>
+    <div class="preloader" wire:loading.flex wire:target="submitVerification">
+        <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
+        <p>Loading ...</p>
+    </div>
+    <div class="preloader" wire:loading.flex wire:target="updatePassword">
         <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
         <p>Loading ...</p>
     </div>
