@@ -44,7 +44,7 @@ class UserRegister extends Component
         ]);
 
         if ($player->save()) {
-            $this->redirect('/');
+            $this->redirect('/login');
         } else {
             $this->addError('fullname', 'Something went wrong.. try again..');
         }
