@@ -55,7 +55,7 @@
                             {{ $email }}</strong></p>
                 </form>
             @else
-                <form wire:submit.prevent="updatePassword">
+                <form>
                     <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}"
                         alt="Santa Logo">
                     <div class="form-heading">Enter New Password</div>
@@ -68,7 +68,8 @@
                             <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
                         @enderror
                     </div>
-                    <button class="submit-btn"><i class="fa-solid fa-paper-plane"></i>Update Password</button>
+                    <button wire:click.prevent="updatePassword" class="submit-btn"><i
+                            class="fa-solid fa-paper-plane"></i>Update Password</button>
                     <p class="form-bottom-link">
                         <a wire:navigate href="{{ route('santa.login') }}">
                             < Go to login </a>
