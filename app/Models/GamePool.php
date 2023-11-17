@@ -21,4 +21,8 @@ class GamePool extends Model
     {
         return $this->belongsTo(Player::class);
     }
+    public function guestUser()
+    {
+        return $this->belongsTo(guestUser::class);
+    }
 }

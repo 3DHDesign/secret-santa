@@ -27,6 +27,7 @@ class PlayerUpdateRequest extends FormRequest
             'division_id' => ['required', 'exists:divisions,id'],
             'full_name' => ['required', 'max:255', 'string'],
             'number' => ['required', 'max:255', 'string'],
+            'email' => ['required'],
             'password' => ['nullable'],
         ];
     }

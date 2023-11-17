@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the migrations.
      *
@@ -19,6 +20,12 @@ return new class extends Migration {
                 ->on('players')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
+            $table
+                ->foreign('guest_id')
+                ->references('id')
+                ->on('game_pools')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
         });
     }
 
@@ -30,7 +37,7 @@ return new class extends Migration {
     public function down()
     {
         Schema::table('game_pools', function (Blueprint $table) {
-            $table->dropForeign(['player_id']);
+            $table->dropForeign(['player_id', 'guest_user']);
         });
     }
 };
