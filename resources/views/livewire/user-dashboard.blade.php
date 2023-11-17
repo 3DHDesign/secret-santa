@@ -9,9 +9,13 @@
     </div>
     <div class="santas-wrapper">
 
-        @foreach ($players as $player)
-            <livewire:santa-card :id="$player->id" :key="$player->id" />
-        @endforeach
+        @if ($players)
+            @foreach ($players as $player)
+                <livewire:santa-card :id="$player->id" :key="$player->id" />
+            @endforeach
+        @else
+            <p style="text-align: center; color: white;"> Waiting for other players ....</p>
+        @endif
 
     </div>
 
