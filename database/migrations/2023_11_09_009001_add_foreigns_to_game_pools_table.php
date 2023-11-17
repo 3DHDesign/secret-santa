@@ -20,12 +20,6 @@ return new class extends Migration
                 ->on('players')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
-            $table
-                ->foreign('guest_id')
-                ->references('id')
-                ->on('game_pools')
-                ->onUpdate('CASCADE')
-                ->onDelete('CASCADE');
         });
     }
 
@@ -37,7 +31,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('game_pools', function (Blueprint $table) {
-            $table->dropForeign(['player_id', 'guest_user']);
+            $table->dropForeign(['player_id']);
         });
     }
 };

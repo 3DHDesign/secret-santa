@@ -25,7 +25,7 @@ class SantaCard extends Component
 
     public function mount()
     {
-        $isPlayerActive = GamePool::where('guest_user', $this->id)->exists();
+        $isPlayerActive = GamePool::where('guest_id', $this->id)->exists();
 
         if ($isPlayerActive) {
             $this->class = 'off-class';
@@ -36,17 +36,15 @@ class SantaCard extends Component
 
     function selected($id)
     {
-        $player_details = Player::find($id)->exists();
-        $isPlayerActive = GamePool::where('guest_user', $id)->exists();
+        $isPlayerActive = GamePool::where('guest_id', $id)->exists();
 
-        if ($player_details && !$isPlayerActive) {
-
-            $isActive = GamePool::where('guest_user', $id)->exists();
+        if (!$isPlayerActive) {
+            $isActive = GamePool::where('guest_id', $id)->exists();
 
             if (!$isActive) {
                 GamePool::create([
                     'player_id' => $this->user->id,
-                    'guest_user' => $id,
+                    'guest_id' => $id,
                 ]);
                 event(new \App\Events\GamePoolEvent($id));
                 $this->redirect('game-end');

@@ -21,4 +21,9 @@ class GuestUsers extends Model
     {
         return $this->belongsTo(Division::class);
     }
+
+    public function gamePoll()
+    {
+        return $this->belongsTo(GamePool::class);
+    }
 }

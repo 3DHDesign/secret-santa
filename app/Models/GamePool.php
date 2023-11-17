@@ -11,7 +11,7 @@ class GamePool extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = ['player_id', 'guest_user'];
+    protected $fillable = ['player_id', 'guest_id'];
 
     protected $searchableFields = ['*'];
 
@@ -23,6 +23,6 @@ class GamePool extends Model
     }
     public function guestUser()
     {
-        return $this->belongsTo(guestUser::class);
+        return $this->belongsTo(GuestUsers::class);
     }
 }

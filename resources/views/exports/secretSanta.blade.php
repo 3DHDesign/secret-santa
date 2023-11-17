@@ -2,25 +2,32 @@
     <thead>
         <tr>
             <th>Player Full Name</th>
-            <th>Player Division</th>
-            <th>Player Mobile Number</th>
+            <th>to</th>
             <th>Selected Person</th>
-            <th>Selected Person Mobile Number</th>
+            <th>Player Mobile Number</th>
             <th>Selected Person Division</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($games as $status)
+        @foreach ($guests as $guest)
             <tr>
-                <td>{{ $status->player->full_name }}</td>
-                <td>{{ $status->player->division->name }}</td>
-                <td>{{ $status->player->number }}</td>
+                <td>{{ $guest->full_name }}</td>
+                <td>to</td>
                 @php
-                    $guest_player_details = App\Models\Player::find($status->guest_user);
+                    $player_details = App\Models\GamePool::where('guest_id', $guest->id)
+                        ->with('player')
+                        ->first();
                 @endphp
-                <td>{{ $guest_player_details->full_name }}</td>
-                <td>{{ $guest_player_details->number }}</td>
-                <td>{{ $guest_player_details->division->name }}</td>
+                @if (!$player_details == '')
+                    <td>{{ $player_details->player->full_name }}</td>
+                    <td>{{ $player_details->player->number }}</td>
+                    <td>{{ $player_details->player->division->name }}</td>
+                @else
+                    <td>NO</td>
+                    <td>NO</td>
+                    <td>NO</td>
+                @endif
+
             </tr>
         @endforeach
     </tbody>

@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Models\GamePool;
+use App\Models\GuestUsers;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 
@@ -14,7 +15,7 @@ class GameReport implements FromView
     public function view(): View
     {
         return view('exports.secretSanta', [
-            'games' => GamePool::with('player')->get()
+            'guests' => GuestUsers::all()
         ]);
     }
 }
