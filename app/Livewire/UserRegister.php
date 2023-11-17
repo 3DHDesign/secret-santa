@@ -48,7 +48,16 @@ class UserRegister extends Component
         ]);
 
         if ($player->save()) {
-            $this->redirect('/santa-login');
+            $credentials = [
+                'number' => $this->number,
+                'password' => $this->password,
+            ];
+
+            if (Auth::guard('players')->attempt($credentials)) {
+                $this->redirect('/start-game');
+            } else {
+                $this->addError('number', 'Invalid credentials. Please check your number and password.');
+            }
         } else {
             $this->addError('fullname', 'Something went wrong.. try again..');
         }
