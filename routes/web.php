@@ -3,6 +3,7 @@
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\FrontEndController;
+use App\Livewire\ForgotPassword;
 use App\Livewire\ShowSelectedPerson;
 use App\Livewire\UserDashboard;
 use App\Livewire\UserLogin;
@@ -32,8 +33,9 @@ Route::middleware(['santa.auth'])->group(function () {
 });
 
 Route::middleware(['santa.login.auth'])->group(function () {
-    Route::get('/', UserLogin::class)->name('santa.login');
-    Route::get('/get-key', UserRegister::class)->name('santa.register');
+    Route::get('/santa-login', UserLogin::class)->name('santa.login');
+    Route::get('/password-reset', ForgotPassword::class)->name('santa.reset');
+    Route::get('/', UserRegister::class)->name('santa.register');
 });
 
 Route::get('/cls', function () {

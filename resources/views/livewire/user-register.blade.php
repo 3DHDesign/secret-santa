@@ -35,6 +35,13 @@
                 @enderror
             </div>
             <div class="form-element">
+                <label for="email">Email</label>
+                <input type="text" wire:model.live="email" placeholder="Email">
+                @error('email')
+                    <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
+                @enderror
+            </div>
+            <div class="form-element">
                 <label for="password">Password</label>
                 <input type="password" wire:model.live="password" placeholder="Password">
                 @error('password')

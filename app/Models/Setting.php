@@ -11,7 +11,7 @@ class Setting extends Model
     use HasFactory;
     use Searchable;
 
-    protected $fillable = [];
+    protected $fillable = ['game_status'];
 
     protected $searchableFields = ['*'];
 }

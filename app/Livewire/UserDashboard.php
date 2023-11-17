@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\GamePool;
 use App\Models\Player;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Http\Request;
@@ -13,10 +14,13 @@ class UserDashboard extends Component
 {
     public $players;
     public $user;
+    public $game_status;
 
     function __construct()
     {
         $this->user = Auth::guard('players')->user();
+        $game = Setting::find(1);
+        $this->game_status = $game->game_status;
     }
 
     function logout(Request $request)
@@ -24,12 +28,14 @@ class UserDashboard extends Component
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         Auth::guard('players')->logout();
-        $this->redirect('/');
+        $this->redirect('/santa-login');
     }
 
     function mount()
     {
-        $this->fetchPlayers();
+        if ($this->game_status == 1) {
+            $this->fetchPlayers();
+        }
     }
 
     public function fetchPlayers()

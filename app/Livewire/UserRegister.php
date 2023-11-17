@@ -26,6 +26,9 @@ class UserRegister extends Component
     #[Rule('required|max:20|min:4|string')]
     public $password = '';
 
+    #[Rule('required|email|string|unique:players')]
+    public $email = '';
+
     #[Rule('required')]
     public $selectedDivision = '';
 
@@ -40,11 +43,12 @@ class UserRegister extends Component
             'division_id' => $this->selectedDivision,
             'full_name' => $this->fullname,
             'number' => $this->number,
+            'email' => $this->email,
             'password' => Hash::make($this->password),
         ]);
 
         if ($player->save()) {
-            $this->redirect('/');
+            $this->redirect('/santa-login');
         } else {
             $this->addError('fullname', 'Something went wrong.. try again..');
         }

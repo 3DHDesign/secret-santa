@@ -20,7 +20,7 @@ class Player extends Authenticatable
     use HasProfilePhoto;
     use TwoFactorAuthenticatable;
 
-    protected $fillable = ['division_id', 'full_name', 'number', 'password'];
+    protected $fillable = ['division_id', 'full_name', 'email', 'number', 'password'];
 
     protected $searchableFields = ['*'];
 
@@ -35,5 +35,10 @@ class Player extends Authenticatable
     public function gamePools()
     {
         return $this->hasMany(GamePool::class);
+    }
+
+    public function forgotPasswords()
+    {
+        return $this->hasMany(ForgotPassword::class);
     }
 }
