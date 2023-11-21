@@ -331,6 +331,10 @@ input[type="password"]:focus {
     transform: scale(1.1);
 }
 
+.santa-card:hover>.card-number {
+    color: #ff037a;
+}
+
 .santa-gift {
     width: 50%;
     margin-top: 20px;
