@@ -41,7 +41,7 @@ class UserDashboard extends Component
 
     public function fetchPlayers()
     {
-        $this->players = GuestUsers::select(['id'])->get();
+        $this->players = GuestUsers::select(['id'])->inRandomOrder()->get();
     }
 
     public function render()
