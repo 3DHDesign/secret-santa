@@ -7,7 +7,7 @@
         <form wire:submit.prevent="login">
             <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
             <div class="form-heading">Entrance</div>
-            <div class="form-subheading">Free entrance to secret santa</div>
+            <div class="form-subheading">Entrance to secret santa</div>
             <div class="form-element">
                 <label for="number">Mobile Number</label>
                 <input type="text" wire:model.live="number" placeholder="Mobile number"
@@ -24,7 +24,7 @@
                     <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
                 @enderror
             </div>
-            <button class="submit-btn"><i class="fa-solid fa-ticket"></i>Entrance Pass</button>
+            <button class="submit-btn"><i class="fa-solid fa-ticket"></i>ENTER NOW</button>
             <p class="form-bottom-link">I forgot my password > <a wire:navigate href="{{ route('santa.reset') }}">Reset
                     now
                 </a><i class="fa-solid fa-key"></i>
