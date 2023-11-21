@@ -7,7 +7,7 @@
         <form wire:submit.prevent="register">
             <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
             <div class="form-heading">Get Ready</div>
-            <div class="form-subheading">Get your key to enter the santa world</div>
+            <div class="form-subheading">Entrance to secret santa</div>
             <div class="form-element">
                 <label for="fullname">Full Name</label>
                 <input type="text" wire:model.live="fullname" placeholder="Full Name">
@@ -48,9 +48,8 @@
                     <span class="error">From Santa: {{ $message }} <i class="fa-solid fa-bomb"></i></span>
                 @enderror
             </div>
-            <button class="submit-btn"><i class="fa-solid fa-ticket"></i>Grab your key</button>
-            <p class="form-bottom-link">I Already have a pass > <a wire:navigate
-                    href="{{ route('santa.login') }}">Entrance
+            <button class="submit-btn"><i class="fa-solid fa-ticket"></i>ENTER NOW</button>
+            <p class="form-bottom-link">I Already have a pass > <a wire:navigate href="{{ route('santa.login') }}">LOGIN
                 </a><i class="fa-solid fa-right-to-bracket"></i>
         </form>
     </div>

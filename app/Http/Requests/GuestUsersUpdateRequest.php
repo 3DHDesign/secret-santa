@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PlayerStoreRequest extends FormRequest
+class GuestUsersUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,9 +26,6 @@ class PlayerStoreRequest extends FormRequest
         return [
             'division_id' => ['required', 'exists:divisions,id'],
             'full_name' => ['required', 'max:255', 'string'],
-            'number' => ['required', 'max:255', 'string'],
-            'email' => ['required'],
-            'password' => ['required'],
         ];
     }
 }

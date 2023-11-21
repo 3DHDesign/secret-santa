@@ -3,6 +3,7 @@
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\FrontEndController;
+use App\Http\Controllers\GuestUsersController;
 use App\Livewire\ForgotPassword;
 use App\Livewire\ShowSelectedPerson;
 use App\Livewire\UserDashboard;
@@ -57,4 +58,32 @@ Route::prefix('/')
     ->group(function () {
         Route::resource('divisions', DivisionController::class);
         Route::resource('players', PlayerController::class);
+        Route::get('all-guest-users', [
+            GuestUsersController::class,
+            'index',
+        ])->name('all-guest-users.index');
+        Route::post('all-guest-users', [
+            GuestUsersController::class,
+            'store',
+        ])->name('all-guest-users.store');
+        Route::get('all-guest-users/create', [
+            GuestUsersController::class,
+            'create',
+        ])->name('all-guest-users.create');
+        Route::get('all-guest-users/{guestUsers}', [
+            GuestUsersController::class,
+            'show',
+        ])->name('all-guest-users.show');
+        Route::get('all-guest-users/{guestUsers}/edit', [
+            GuestUsersController::class,
+            'edit',
+        ])->name('all-guest-users.edit');
+        Route::put('all-guest-users/{guestUsers}', [
+            GuestUsersController::class,
+            'update',
+        ])->name('all-guest-users.update');
+        Route::delete('all-guest-users/{guestUsers}', [
+            GuestUsersController::class,
+            'destroy',
+        ])->name('all-guest-users.destroy');
     });

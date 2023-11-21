@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\GamePool;
+use App\Models\GuestUsers;
 use App\Models\Player;
 use Livewire\Component;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class ShowSelectedPerson extends Component
     {
         $userSelect = GamePool::where('player_id', $this->user->id)->first();
 
-        $this->player_details = Player::find($userSelect->guest_user);
+        $this->player_details = GuestUsers::find($userSelect->guest_id);
     }
 
     function logout(Request $request)

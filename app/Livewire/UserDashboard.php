@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\GamePool;
+use App\Models\GuestUsers;
 use App\Models\Player;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
@@ -40,7 +41,7 @@ class UserDashboard extends Component
 
     public function fetchPlayers()
     {
-        $this->players = Player::where('id', '<>', $this->user->id)->select(['id'])->get();
+        $this->players = GuestUsers::select(['id'])->inRandomOrder()->get();
     }
 
     public function render()

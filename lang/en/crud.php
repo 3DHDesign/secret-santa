@@ -48,4 +48,17 @@ return [
             'password' => 'Password',
         ],
     ],
+
+    'all_guest_users' => [
+        'name' => 'All Guest Users',
+        'index_title' => 'AllGuestUsers List',
+        'new_title' => 'New Guest users',
+        'create_title' => 'Create GuestUsers',
+        'edit_title' => 'Edit GuestUsers',
+        'show_title' => 'Show GuestUsers',
+        'inputs' => [
+            'division_id' => 'Division',
+            'full_name' => 'Full Name',
+        ],
+    ],
 ];

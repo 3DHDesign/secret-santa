@@ -21,6 +21,10 @@
                     <x-jet-nav-link href="{{ route('players.index') }}" :active="request()->routeIs('players.index')">
                         Players
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('all-guest-users.index') }}" :active="request()->routeIs('all-guest-users.index')">
+                        Guest Players
+                    </x-jet-nav-link>
+
                 </div>
 
 
