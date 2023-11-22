@@ -7,6 +7,10 @@
         <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
         <p>Logout..</p>
     </div>
+    <div class="preloader" wire:loading.flex>
+        <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
+        <p>Santa is choosing your partner...</p>
+    </div>
     <div class="preloader magical-box {{ $magicBoxClass }}">
         <livewire:magical-statement />
 

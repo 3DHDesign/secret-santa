@@ -40,6 +40,27 @@ class UserDashboard extends Component
         }
     }
 
+    #[On('sanata-choose')]
+    public function santaSelect($id)
+    {
+        $isPlayerActive = GamePool::where('guest_id', $id)->exists();
+
+        if (!$isPlayerActive) {
+            $isActive = GamePool::where('guest_id', $id)->exists();
+
+            if (!$isActive) {
+                GamePool::create([
+                    'player_id' => $this->user->id,
+                    'guest_id' => $id,
+                ]);
+                event(new \App\Events\GamePoolEvent($id));
+                $this->redirect('game-end');
+            } else {
+                $this->redirect('start-game');
+            }
+        }
+    }
+
     public function magicalBox()
     {
         $this->magicBoxClass = 'display-flex';
