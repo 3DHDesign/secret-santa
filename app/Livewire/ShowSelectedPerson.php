@@ -16,6 +16,8 @@ class ShowSelectedPerson extends Component
 
     public $player_details;
 
+    public $magicBoxClass;
+
     function __construct()
     {
         $this->user = Auth::guard('players')->user();
@@ -34,6 +36,11 @@ class ShowSelectedPerson extends Component
         $request->session()->regenerateToken();
         Auth::guard('players')->logout();
         $this->redirect('/santa-login');
+    }
+
+    public function magicalBox()
+    {
+        $this->magicBoxClass = 'display-flex';
     }
 
     public function render()

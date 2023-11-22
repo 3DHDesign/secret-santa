@@ -33,6 +33,9 @@ class UserRegister extends Component
     public $selectedDivision = '';
 
 
+    public $magicBoxClass;
+
+
     public $divisions;
 
     function register()
@@ -66,6 +69,11 @@ class UserRegister extends Component
     function mount()
     {
         $this->divisions = Division::select(['id', 'name'])->get();
+    }
+
+    public function magicalBox()
+    {
+        $this->magicBoxClass = 'display-flex';
     }
 
     public function render()

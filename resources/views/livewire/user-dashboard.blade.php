@@ -7,6 +7,10 @@
         <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
         <p>Logout..</p>
     </div>
+    <div class="preloader magical-box {{ $magicBoxClass }}">
+        <livewire:magical-statement />
+
+    </div>
     <div class="santas-wrapper">
 
         @if ($players)
@@ -19,6 +23,9 @@
 
     </div>
 
+    <div class="santa-button" wire:click="magicalBox">
+        <i class="fa-solid fa-gift"></i>
+    </div>
     <div class="logout-button" wire:click="logout">
         <i class="fa-solid fa-right-from-bracket"></i>
     </div>

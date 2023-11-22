@@ -28,6 +28,7 @@
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Collect gifts from your secret Santa! | 3DH">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     @vite(['resources/js/app.js'])
     @livewireStyles
@@ -75,6 +76,14 @@
     <img class="dh-office" src="{{ asset('assets/images/3dh-house.png') }}" alt="3dh-office">
 
     @livewireScripts
+
+    <script>
+        $(document).ready(function() {
+            $('#close-btn').on('click', function() {
+                $('.magical-box').removeClass('display-flex');
+            });
+        });
+    </script>
 
 </body>
 

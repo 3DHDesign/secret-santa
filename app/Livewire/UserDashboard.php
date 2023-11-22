@@ -16,6 +16,7 @@ class UserDashboard extends Component
     public $players;
     public $user;
     public $game_status;
+    public $magicBoxClass;
 
     function __construct()
     {
@@ -37,6 +38,11 @@ class UserDashboard extends Component
         if ($this->game_status == 1) {
             $this->fetchPlayers();
         }
+    }
+
+    public function magicalBox()
+    {
+        $this->magicBoxClass = 'display-flex';
     }
 
     public function fetchPlayers()

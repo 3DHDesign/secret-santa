@@ -3,9 +3,14 @@
         <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
         <p>Loading ...</p>
     </div>
+    <div class="preloader magical-box {{ $magicBoxClass }}">
+        <livewire:magical-statement />
+
+    </div>
     <div class="login_wrapper">
         <form wire:submit.prevent="register">
-            <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
+            <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo"
+                wire:click="magicalBox">
             <div class="form-heading">Get Ready</div>
             <div class="form-subheading">Entrance to secret santa</div>
             <div class="form-element">
@@ -49,7 +54,8 @@
                 @enderror
             </div>
             <button class="submit-btn"><i class="fa-solid fa-ticket"></i>ENTER NOW</button>
-            <p class="form-bottom-link">I Already have a pass > <a wire:navigate href="{{ route('santa.login') }}">LOGIN
+            <p class="form-bottom-link">I Already have a pass > <a wire:navigate
+                    href="{{ route('santa.login') }}">LOGIN
                 </a><i class="fa-solid fa-right-to-bracket"></i>
         </form>
     </div>

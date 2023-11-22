@@ -20,6 +20,8 @@ class UserLogin extends Component
     #[Rule('required|max:20|min:4|string')]
     public $password = '';
 
+    public $magicBoxClass;
+
     public function login()
     {
         $this->validate();
@@ -34,6 +36,15 @@ class UserLogin extends Component
         } else {
             $this->addError('number', 'Invalid credentials. Please check your number and password.');
         }
+    }
+
+    public function mount()
+    {
+    }
+
+    public function magicalBox()
+    {
+        $this->magicBoxClass = 'display-flex';
     }
 
     public function render()

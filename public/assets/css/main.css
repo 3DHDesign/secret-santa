@@ -76,7 +76,19 @@ body {
 }
 
 .container .login_wrapper {
-    background-color: white;
+    background-color: #fff;
+    padding: 40px 10px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin: 54px 0 40px 0;
+}
+
+.login_wrapper {
+    background-color: #fff;
+
     padding: 40px 10px;
     width: 30%;
     display: flex;
@@ -115,6 +127,56 @@ body {
     text-align: center;
 }
 
+.magical-content {
+    overflow: hidden;
+    font-size: 15px;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    white-space: wrap;
+    margin: 0 auto;
+    /* animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite; */
+}
+
+.magical-text {
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-position-y: center;
+}
+
+.display-flex {
+    display: flex !important;
+}
+
+
+
+@keyframes revealLine {
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes typeIt {
+    0% {
+        top: 0;
+        height: 2em;
+    }
+
+    100% {
+        top: -60em;
+        height: 82em;
+    }
+}
+
 form {
     width: 85%;
     display: flex;
@@ -122,6 +184,25 @@ form {
     align-items: center;
     justify-content: center;
     row-gap: 15px;
+}
+
+.magical-wrapper {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 15px;
+}
+
+.magical-box-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin: 54px 0 40px 0;
 }
 
 .form-element {
@@ -220,8 +301,54 @@ input[type="password"]:focus {
     z-index: 2000;
 }
 
+.santa-button {
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    color: #fff;
+    background-color: #970148;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    -webkit-box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    -moz-box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    z-index: 2000;
+}
+
 .logout-button i {
-    font-size: 20px;
+    font-size: 28px;
+}
+
+.santa-button i {
+    font-size: 28px;
+}
+
+.close-button {
+
+    color: #fff;
+    background-color: #970148;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    -webkit-box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    -moz-box-shadow: -5px 5px 0px 0px rgba(1, 73, 41, 0.252);
+    z-index: 2000;
+}
+
+.close-button i {
+    font-size: 30px;
 }
 
 .submit-btn .fa-ticket {
@@ -242,6 +369,7 @@ input[type="password"]:focus {
 .form-santa-logo {
     position: relative;
     width: 30%;
+    cursor: pointer;
 }
 
 .dh-office {
@@ -344,6 +472,29 @@ input[type="password"]:focus {
 .off-class {
     opacity: 0.5;
 
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
 }
 
 @media screen and (max-width: 800px) {

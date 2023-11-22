@@ -3,9 +3,14 @@
         <img src="{{ asset('assets/images/secret santa logo.png') }}" alt="secret santa loader">
         <p>Loading ...</p>
     </div>
+    <div class="preloader magical-box {{ $magicBoxClass }}">
+        <livewire:magical-statement />
+
+    </div>
     <div class="login_wrapper">
         <form wire:submit.prevent="login">
-            <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo">
+            <img class="form-santa-logo" src="{{ asset('assets/images/secret santa logo.png') }}" alt="Santa Logo"
+                wire:click="magicalBox">
             <div class="form-heading">Entrance</div>
             <div class="form-subheading">Entrance to secret santa</div>
             <div class="form-element">
