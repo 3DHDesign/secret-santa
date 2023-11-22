@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -45,6 +46,12 @@ class UserLogin extends Component
     public function magicalBox()
     {
         $this->magicBoxClass = 'display-flex';
+    }
+
+    #[On('close-box')]
+    public function removeMagicalBox()
+    {
+        $this->magicBoxClass = '';
     }
 
     public function render()

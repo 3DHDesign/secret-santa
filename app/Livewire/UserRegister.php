@@ -6,6 +6,7 @@ use App\Models\Division;
 use App\Models\Player;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Livewire\Attributes\On;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 
@@ -74,6 +75,12 @@ class UserRegister extends Component
     public function magicalBox()
     {
         $this->magicBoxClass = 'display-flex';
+    }
+
+    #[On('close-box')]
+    public function removeMagicalBox()
+    {
+        $this->magicBoxClass = '';
     }
 
     public function render()

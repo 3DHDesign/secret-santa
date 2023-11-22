@@ -8,6 +8,7 @@ use App\Models\Player;
 use Livewire\Component;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\On;
 use Livewire\Features\SupportNavigate\SupportNavigate;
 
 class ShowSelectedPerson extends Component
@@ -41,6 +42,12 @@ class ShowSelectedPerson extends Component
     public function magicalBox()
     {
         $this->magicBoxClass = 'display-flex';
+    }
+
+    #[On('close-box')]
+    public function removeMagicalBox()
+    {
+        $this->magicBoxClass = '';
     }
 
     public function render()

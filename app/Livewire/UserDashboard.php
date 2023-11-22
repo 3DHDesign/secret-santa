@@ -45,6 +45,12 @@ class UserDashboard extends Component
         $this->magicBoxClass = 'display-flex';
     }
 
+    #[On('close-box')]
+    public function removeMagicalBox()
+    {
+        $this->magicBoxClass = '';
+    }
+
     public function fetchPlayers()
     {
         $this->players = GuestUsers::select(['id'])->inRandomOrder()->get();

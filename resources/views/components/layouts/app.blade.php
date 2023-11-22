@@ -77,13 +77,13 @@
 
     @livewireScripts
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             $('#close-btn').on('click', function() {
                 $('.magical-box').removeClass('display-flex');
             });
         });
-    </script>
+    </script> --}}
 
 </body>
 

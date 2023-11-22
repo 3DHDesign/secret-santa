@@ -7,7 +7,7 @@
             <p class="form-bottom-link" style="color: red; margin-top: 26px;">Merry Christmas from 3DH Family</i>
         </div>
     </div>
-    <div class="close-button" id="close-btn">
+    <div class="close-button" id="close-btn" wire:click.prevent="closeMagical">
         <i class="fa-regular fa-circle-xmark"></i>
     </div>
 

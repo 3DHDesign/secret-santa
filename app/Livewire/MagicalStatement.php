@@ -35,6 +35,10 @@ class MagicalStatement extends Component
 
         $this->content = $christmasMessages[array_rand($christmasMessages)];
     }
+    public function closeMagical()
+    {
+        $this->dispatch('close-box');
+    }
 
     public function render()
     {
