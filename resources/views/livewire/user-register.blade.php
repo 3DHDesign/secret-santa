@@ -59,5 +59,7 @@
                 </a><i class="fa-solid fa-right-to-bracket"></i>
         </form>
     </div>
+    <p class="credit-footer">Please ensure that all the gifts are brought to the head office on or before December 8th.
+    </p>
     <p class="credit-footer">Secret Santa | Design & Developed by <a href="https://3dhdesign.com">3DH Design</a></p>
 </div>
