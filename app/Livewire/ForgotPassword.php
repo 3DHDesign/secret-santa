@@ -39,7 +39,7 @@ class ForgotPassword extends Component
         $this->validate();
 
         $this->user = Player::where('email', $this->email)->first();
-        if (!$this->user->email = '') {
+        if ($this->user) {
             $this->verificationCode = rand(100000, 999999);
             $this->rememberToken = Str::random(32);
 
