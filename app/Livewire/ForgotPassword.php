@@ -39,26 +39,29 @@ class ForgotPassword extends Component
         $this->validate();
 
         $this->user = Player::where('email', $this->email)->first();
+        if (!$this->user->email = '') {
+            $this->verificationCode = rand(100000, 999999);
+            $this->rememberToken = Str::random(32);
 
-        $this->verificationCode = rand(100000, 999999);
-        $this->rememberToken = Str::random(32);
+            $data = [
+                'name' => $this->user->name,
+                'code' => $this->verificationCode,
+                'token' => $this->rememberToken,
+            ];
 
-        $data = [
-            'name' => $this->user->name,
-            'code' => $this->verificationCode,
-            'token' => $this->rememberToken,
-        ];
-
-        Mail::to($this->user->email)->send(new VerificationCode($data));
-        $password_reset = ModelsForgotPassword::create([
-            'user_id' => $this->user->id,
-            'email' => $this->email,
-            'reset_code' => $this->verificationCode,
-            'remember_token' => $this->rememberToken,
-            'status' => 1, // Not verified
-        ]);
-        $password_reset->save();
-        $this->verifyCheck();
+            Mail::to($this->user->email)->send(new VerificationCode($data));
+            $password_reset = ModelsForgotPassword::create([
+                'user_id' => $this->user->id,
+                'email' => $this->email,
+                'reset_code' => $this->verificationCode,
+                'remember_token' => $this->rememberToken,
+                'status' => 1, // Not verified
+            ]);
+            $password_reset->save();
+            $this->verifyCheck();
+        } else {
+            $this->addError('email', 'Your email is not registered');
+        }
     }
 
     function verifyCheck()
