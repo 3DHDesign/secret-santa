@@ -42,9 +42,9 @@ body {
     position: absolute;
     display: flex;
     top: 0;
+    bottom: 0;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
     background-color: rgba(0, 0, 0, 0.801);
     align-items: center;
     justify-content: center;
@@ -421,6 +421,7 @@ input[type="password"]:focus {
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 200px;
+    position: absolute;
 }
 
 .santas-wrapper {
